@@ -1,0 +1,49 @@
+.main_link{
+
+    text-decoration:none;
+}
+.main_link:hover{
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+.main_link:active{
+    text-decoration: line-through;
+}
+
+.main_link:visited{
+    color:blanchedalmond;
+}
+input{color:aquamarine}
+input:focus{color:black}
+
+button {
+    background-color: gray;
+  }
+  button:hover {
+    background-color: lightblue; /* Меняем фон при наведении */
+  }
+  
+  li:first-child {
+    font-weight: bold; /* Первый пункт станет жирным */
+  }
+  
+  li:last-child {
+    color: blue; /* Последний пункт станет синим */
+  }
+  
+  li:nth-child(2) {
+    color: red; /* Второй пункт станет красным */
+  }
+  li:nth-child(odd) {
+    background-color: lightgray; /* Нечетные элементы – серые */
+  }
+  
+  li:nth-child(even) {
+    background-color: white; /* Четные элементы – белые */
+  }
+
+  .header_1{
+    color:blanchedalmond ;
+    text-align:center;
+  }
