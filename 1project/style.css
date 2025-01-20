@@ -1,0 +1,19 @@
+body{
+  background-color: black;
+}
+.sign_in{
+  position: absolute;
+  color: red;
+  
+}
+
+  .image{
+    position: absolute;
+    width:100%;
+    position:relative;
+    align-items: center;
+
+    
+    
+    
+  }
