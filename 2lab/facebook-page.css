@@ -1,0 +1,122 @@
+/* Общий стиль */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.left {
+    margin-right: 50px;
+}
+
+.left h1 {
+    font-size: 50px;
+    color: #1877f2;
+    text-transform: lowercase;
+    margin: 0;
+}
+
+.left p {
+    font-size: 18px;
+    color: #606770;
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+.right {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button[type="submit"] {
+    background-color: #1877f2;
+}
+
+form button[type="submit"]:hover {
+    background-color: #155dbb;
+}
+
+form button.create-account {
+    background-color: #42b72a;
+}
+
+form button.create-account:hover {
+    background-color: #36a420;
+}
+
+form .forgot-password {
+    font-size: 14px;
+    color: #1877f2;
+    text-decoration: none;
+}
+
+form .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.additional-text {
+    font-size: 14px;
+    color: #606770;
+    margin-top: 20px;
+}
+
+.additional-text strong {
+    color: #000;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #606770;
+    font-size: 12px;
+}
+
+footer .languages a,
+footer .footer-links a {
+    color: #606770;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+footer .languages a:hover,
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
