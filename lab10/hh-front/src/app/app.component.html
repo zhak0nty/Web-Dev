@@ -1,0 +1,17 @@
+<div class="min-h-screen bg-gray-50">
+  <nav class="bg-blue-700 shadow-md text-white">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <a routerLink="/" class="text-xl font-bold">HH Front</a>
+        <div class="flex space-x-4">
+          <a routerLink="/" routerLinkActive="text-blue-200" [routerLinkActiveOptions]="{exact: true}" class="hover:text-blue-200 transition-colors">Companies</a>
+          <a routerLink="/top-vacancies" routerLinkActive="text-blue-200" class="hover:text-blue-200 transition-colors">Top Vacancies</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

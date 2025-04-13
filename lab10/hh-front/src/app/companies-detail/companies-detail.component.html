@@ -1,0 +1,42 @@
+<div class="container mx-auto px-4 py-8">
+    <button 
+      class="bg-blue-600 text-white px-4 py-2 rounded-lg mb-6 hover:bg-blue-700 transition-colors"
+      routerLink="/"
+    >
+      Back to Companies
+    </button>
+    
+    <div *ngIf="company" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+      <h1 class="text-3xl font-bold mb-4 text-gray-800">{{ company.name }}</h1>
+      <p class="text-lg text-gray-600 mb-2"><span class="font-semibold">City:</span> {{ company.city }}</p>
+      <p class="text-lg text-gray-600 mb-4">
+        <span class="font-semibold">Address:</span> {{ company.address }}
+      </p>
+      <p class="text-gray-700">{{ company.description }}</p>
+    </div>
+    
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">Vacancies</h2>
+    
+    <div *ngIf="vacancies.length > 0" class="grid grid-cols-1 gap-4">
+      <div 
+        *ngFor="let vacancy of vacancies" 
+        class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500"
+      >
+        <h3 class="text-xl font-semibold mb-2 text-blue-700">{{ vacancy.name }}</h3>
+        <p class="text-green-600 font-medium mb-2">Salary: ${{ vacancy.salary }}</p>
+        <p *ngIf="vacancy.description" class="text-gray-700">{{ vacancy.description }}</p>
+      </div>
+    </div>
+    
+    <div *ngIf="vacancies.length === 0 && !loadingVacancies" class="bg-gray-100 rounded-lg p-6 text-center">
+      <p class="text-gray-600">No vacancies available for this company.</p>
+    </div>
+    
+    <div *ngIf="loadingCompany || loadingVacancies" class="flex justify-center py-8">
+      <p class="text-gray-600">Loading...</p>
+    </div>
+    
+    <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mt-4">
+      {{ error }}
+    </div>
+  </div>
