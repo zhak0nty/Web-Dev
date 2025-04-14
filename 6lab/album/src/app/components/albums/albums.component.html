@@ -1,0 +1,40 @@
+<div class="min-h-screen bg-gradient-to-b from-blue-50 to-white p-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold text-blue-800">Albums</h1>
+      
+      <button class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 flex items-center cursor-pointer">
+        <span class="mr-1">+</span> Add Album
+      </button>
+    </div>
+    
+    <ng-container *ngIf="albums$ | async as albums">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden" *ngIf="albums.length > 0">
+        <ul class="divide-y divide-gray-200">
+          <li *ngFor="let album of albums; trackBy: trackById" class="hover:bg-gray-50 transition duration-150">
+            <div class="flex items-center justify-between p-4">
+              <a [routerLink]="['/albums', album.id]" class="flex-grow cursor-pointer">
+                <div class="text-lg font-medium text-gray-800">{{ album.title }}</div>
+              </a>
+              
+              <button (click)="deleteAlbum(album.id)" class="bg-red-600 hover:bg-red-700 text-white font-medium py-1 px-3 rounded transition duration-150 flex items-center ml-4 cursor-pointer">
+                <span>Delete</span>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <div *ngIf="albums.length === 0" class="text-center py-10">
+        <p class="text-gray-500 mb-4">No albums found</p>
+        <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+          Create Your First Album
+        </button>
+      </div>
+    </ng-container>
+    
+    <div *ngIf="!(albums$ | async)" class="flex justify-center items-center h-64">
+      <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+    </div>
+  </div>
+</div>

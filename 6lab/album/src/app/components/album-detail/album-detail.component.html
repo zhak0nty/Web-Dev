@@ -1,0 +1,49 @@
+<!-- album-detail.component.html -->
+<div class="min-h-screen bg-gradient-to-b from-blue-50 to-white p-6">
+    <div class="max-w-4xl mx-auto">
+      @if (album) {
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h1 class="text-3xl font-bold text-blue-800 mb-6">Album Details</h1>
+          
+          <div class="mb-6">
+            <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title:</label>
+            <input 
+              id="title" 
+              type="text" 
+              [(ngModel)]="album.title" 
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            >
+          </div>
+          
+          <div class="flex flex-wrap gap-3">
+            <button 
+              (click)="saveAlbum()" 
+              class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 flex items-center cursor-pointer"
+            >
+              <span class="mr-1">💾</span> Save
+            </button>
+            
+            <a 
+              [routerLink]="['/albums', album.id, 'photos']" 
+              class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 flex items-center"
+            >
+              <span class="mr-1">🖼️</span> View Photos
+            </a>
+            
+            <a 
+              routerLink="/albums" 
+              class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition duration-300 flex items-center"
+            >
+              <span class="mr-1">←</span> Return
+            </a>
+          </div>
+        </div>
+      }
+      
+      @if (!album) {
+        <div class="flex justify-center items-center h-64">
+          <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+        </div>
+      }
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+<!-- about.component.html -->
+<div class="min-h-screen bg-gradient-to-b from-blue-50 to-white p-6">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-blue-800 mb-6">About This Project</h1>
+      
+      <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Angular Laboratory Work</h2>
+        <p class="text-gray-600 mb-6">
+          This application was created as part of an Angular laboratory project to demonstrate 
+          routing and HTTP module implementation in Angular. The application features CRUD 
+          operations for albums and displays photos from each album.
+        </p>
+        
+        <h3 class="text-xl font-semibold text-gray-800 mb-3">Key Features</h3>
+        <ul class="list-disc pl-6 text-gray-600 mb-6">
+          <li class="mb-2">Routing with Angular Router</li>
+          <li class="mb-2">HTTP requests to JSONPlaceholder API</li>
+          <li class="mb-2">Observable data management</li>
+          <li class="mb-2">CRUD operations for albums</li>
+          <li class="mb-2">Responsive design with Tailwind CSS</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold text-gray-800 mb-3">Project Structure</h3>
+        <p class="text-gray-600 mb-6">
+          The application consists of several components:
+        </p>
+        <ul class="list-disc pl-6 text-gray-600 mb-6">
+          <li class="mb-2">Home Component - Landing page</li>
+          <li class="mb-2">About Component - Project information</li>
+          <li class="mb-2">Albums Component - Album listing with delete functionality</li>
+          <li class="mb-2">Album Detail Component - Edit album information</li>
+          <li class="mb-2">Album Photos Component - View photos in an album</li>
+        </ul>
+        
+        <div class="mt-6">
+          <a routerLink="/albums" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300 inline-block">
+            Explore Albums
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

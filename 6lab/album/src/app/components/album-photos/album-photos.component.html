@@ -1,0 +1,35 @@
+<div class="min-h-screen bg-gradient-to-b from-blue-50 to-white p-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <div class="flex justify-between items-center mb-4">
+          <h1 class="text-3xl font-bold text-blue-800">Album Photos</h1>
+          
+          <a 
+            [routerLink]="['/albums', albumId]" 
+            class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition duration-300 flex items-center cursor-pointer"
+          >
+            <span class="mr-1">←</span> Return
+          </a>
+        </div>
+      </div>
+      
+      <ng-container *ngIf="photos$ | async as photos">
+        <div *ngIf="photos.length > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div *ngFor="let photo of photos; trackBy: trackByPhotoId" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+            <img [src]="photo.url" [alt]="photo.title" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-gray-800 font-medium text-sm mb-2 line-clamp-2">{{ photo.title }}</h3>
+            </div>
+          </div>
+        </div>
+        
+        <div *ngIf="photos.length === 0" class="flex justify-center items-center h-64">
+          <p class="text-gray-500">No photos found for this album</p>
+        </div>
+      </ng-container>
+      
+      <div *ngIf="!(photos$ | async)" class="flex justify-center items-center h-64">
+        <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+      </div>
+    </div>
+  </div>
